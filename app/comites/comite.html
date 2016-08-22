@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="css/main.css"/>
+
+<div ng-show="loggedIn">
+<div>
+
+<input     class="w3-animate-input"
+     ng-model="query" placeholder="recherche..."></div>
+
+
+
+</input>
+<br>
+
+<div ng-show ="adminloggedIn">
+
+
+
+<input  id="a"  ng-model="newCommite"
+
+          placeholder =" ajouter une comite"
+          value="">
+
+
+</input>
+
+<input   id="b" ng-model="newCommitedescription"
+
+          placeholder =" ajouter une comite"
+          value="">
+
+
+</input>
+<button ng-click="count = count + 1;sendComite(count)">submit</button>
+
+<button ng-click="clear()">clear</button>
+
+
+
+</div>
+<div class="left">
+<a ui-sref ="addComment">Exprimez-vous </a></div>
+<div><center>
+
+    <div   ng-repeat="comite in comites | filter :query"  class="page" >
+      <div class="w3-container w3-section   w3-border" overflow: auto" scroll-glue" style="width:70%">
+        <div ng-show="adminloggedIn">
+       <td><button class="btn btn-danger" ng-click="remove(comite._id) " >Remove</button></td>
+
+      <td><button class="btn btn-warning"  ng-click="edit(comite._id,comite)"> Edit </button></td>
+  <td><button class="btn btn-info"  ng-click="save(comite._id,comite)"> save changes </button></td></div>
+  <!-- <button class="glyphicon glyphicon-thumbs-up"
+      ng-click=" vote(comite._id,count)" ,ng-model="vote" ></button>
+
+  <button class="glyphicon glyphicon-thumbs-down"
+      ng-click="downvote(comite._id,comite)"></button>
+       -->
+<div class="w3-container w3-teal " overflow: auto" scroll-glue" style="width:80% ">
+
+     <tr >
+
+
+        <center> <h4  >{{comite.namecomite}}</h4 ></center>
+
+    <strong>  <h5 ><center> {{comite.descriptioncomite}}</h5></strong>
+      {{comite.date | date :'dd/MM/yyyy hh:mm'}}
+
+</div>
+
+
+
+
+
+    {{comite.comment}}
+  </div></div>
+
+</div>
+
+
+</div >
+</div>

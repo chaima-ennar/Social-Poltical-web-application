@@ -1,0 +1,30 @@
+<div ng-show="loggedIn">
+  <div class ="w3-container  w3-border w3-border "style="height:10%">
+<input    ng-model="newCommentd"
+          ng-keypress="sendCommentd($event)"
+          placeholder =" Exprimez-vous"
+          class="w3-animate-input"
+          id=commentd>
+
+
+</input></div> <br><br><br>
+<div>
+  <table class ="comment">
+    <a  ng-if="incomingCommentsd.length>0" ng-click="setNewCommentsd()">il y'a {{difference }} nouveaux commentaires </a>
+    <tr ng-repeat="commentd in commentsd" style="width:60%; height:14%">
+      <div class="w3-card-12 w3-light-grey" >
+
+     <td><image ng-src="{{commentd.userImage}}"  class="imgg">
+
+      <strong>{{commentd.user}}</td></strong>
+
+      <td>  {{commentd.content}}</td>
+      <td>
+      {{commentd.date | date :'dd/MM/yyyy hh:mm'}}
+    </td>
+  </div>
+    </tr>
+
+  </table>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="css/main.css"/>
+<div ng-show="loggedIn">
+
+<center>
+<div class="w3-card-8 w3-dark-grey" style="width:50%">
+<h2><center>Edit your profile</center> </h2>
+<br><br><br><br>
+
+<table>
+  <tr>
+
+
+<div class="edit" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+    accept="image/*" ><center><h4><font color ="light-blue">click here to select your profile image </h4><center></div>
+</font>
+
+<center>
+<img src="images/user.png"></center>
+</tr>
+<tr>
+<br><br>
+<font color ="light-blue">  <center>  <div class="col-sm-8 col-sm-offset-2">
+      put your new user name</div></tr>
+      <tr>
+<br>
+
+<input id="name" ng-model="user.username" style="display:block; margin:auto;"/>
+</tr></center>
+</table>
+<center> <button ng-click ="updateUsername() ">Entrer</button>
+</div>
+</div>

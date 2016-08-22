@@ -1,0 +1,149 @@
+<html ng-app="openbardo">
+  <head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    </link>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"/>
+
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+
+  <body >
+
+   <div ng-controller="NavigationController">
+   <div ng-show="!loggedIn">
+
+ <div class="w3-container"><image src ="images/Tunisie.jpg" class="imga">
+  <div class="logo">
+    <a target="top" href="#" style="width:40px;height:40px" >
+    <img src="http://blog.flamingtext.com/blog/2016/08/19/flamingtext_com_1471649592_938725158.png" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com">
+   </a>
+  </div>
+
+
+<div class ="bottomright"><div class="w3-container w3-theme-l5 (w3-theme-light)">
+<div class="w3-card-12 ">
+<input type="text" class="inputt" placeholder="E-mail" ng-model="login.email"id="email"/>
+<input type="password" class="inputt" placeholder="Password" ng-model="login.password"id="password"/>
+<button ng-click="logUserIn()" class="btnn"  >login </button>
+</form></div>
+<br><br>
+<a ui-sref="signUp"> <strong>Pas encore un membre ?
+</strong> </a>
+</div></div>
+
+<br>
+
+<div class="w3-animate-fading">
+<div class="bottomleft ">
+  <h1>Be Open</h1>
+  <p>et suivez l'actualité politique en tunisie</p>
+</div></div>
+
+
+
+
+
+   </div></div>
+
+
+<div ng-show="loggedIn" id="entete">
+
+  <nav class=" navbar-default " style="  background-color: #bd0e4c">
+    <div class="container">
+      <div class="navbar-header">
+            <a class="navbar-brand" href="#"><i class="fa fa-bank" style="font-size:24px">Openbardo</i></a>
+      </div>
+      <ul class="nav navbar-nav">
+
+
+
+
+
+            <li class="active">  <a ui-sref="comite"> les comités </a></li>
+            <li class="active">  <a ui-sref="loi"> les lois</a></li>
+            <li class="active">  <a ui-sref="depute"> les deputés </a></li>
+          </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="editProfile"> <span class="glyphicon glyphicon-user"></span> Editer votre profil</a></li>
+        <li><a ng-click="logOut()" href="index.html"> <span class="glyphicon glyphicon-log-in"></span> logout</a></li>
+          <li><a  href="#">{{user}}</a>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- <nav class="navbar navbar-inverse">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <a class="navbar-brand" href="#">Openbardo</a>
+         </div>
+
+        <ul>
+
+        <li><a ui-sref="editProfile">Edit Profile </a></li>
+        <li>  <a ng-click="logOut()">logout </a></li>
+
+        <li class="active">  <a ui-sref="comite"> les comites </a></li>
+        <li class="active">  <a ui-sref="loi"> les lois</a></li>
+        <li class="active">  <a ui-sref="depute"> les deputes </a></li>
+      </ul>
+    </div>
+</nav> -->
+   </div>
+
+
+
+   <div ui-view></div>
+
+
+
+
+    <script  src = "/angular/angular.js"></script>
+    <script  src = "//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script  src = "app.js"></script>
+
+    <!-- controllers -->
+    <script  src = "commentd/commentd-controller.js"></script>
+    <script  src = "signup/signup-controller.js"></script>
+    <script  src = "navigation/navigation-controller.js"></script>
+    <script  src = "profile-user/edit-profile-controller.js"></script>
+    <script  src = "comment/comment-controller.js"></script>
+    <script src = "comites/comite-controller.js"></script>
+    <script src = "follow/follow-controller.js"></script>
+    <script src = "lois/loi-controller.js"></script>
+    <script  src = "commentl/commentl-controller.js"></script>
+<script src = "comites/comite-detail.js"></script>
+    <script  src = "deputes/depute-controller.js"></script>
+
+    <!-- libraries -->
+
+    <script src = "/ng-file-upload/dist/ng-file-upload.js"></script>
+    <script src = "/ng-file-upload/dist/ng-file-upload-all.js"></script>
+    <script src = "/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+    </script>
+
+
+
+
+
+
+  </body>
+
+
+</html>

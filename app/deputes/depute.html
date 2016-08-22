@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="css/main.css"/>
+<div ng-show="loggedIn">
+
+  <div>
+    <input
+
+     class="w3-animate-input"
+     ng-model="query" placeholder="recherche...">
+
+   </input></div><br> <div ng-show ="adminloggedIn">
+<input id="c"   ng-model="newDepute"
+
+          placeholder =" ajouter une comite">
+
+
+</input>
+
+<input  id="d"  ng-model="newDeputedescription"
+
+          placeholder =" ajouter une comite">
+
+
+</input>
+  <button ng-click="sendDepute()">submit</button>
+<button ng-click="clear()">clear</button></div>
+
+ <div class="left">  <a ui-sref ="addCommentd">Exprimez-vous</a></div>
+
+<center>
+    <div   ng-repeat="depute in deputes | filter :query"   class="page">
+      <div class="w3-container w3-section   w3-border" overflow: auto" scroll-glue" style="width:70%">
+
+    <div ng-show="adminloggedIn">
+       <td><button class="btn btn-danger" ng-click="remove(depute._id) " >Remove</button></td>
+        <td><button class="btn btn-warning"  ng-click="edit(depute._id,depute)"> Edit </button></td>
+    <td><button class="btn btn-info"  ng-click="save(depute._id,depute)"> save changes </button></td></div>
+<div class="w3-container    w3-teal  " overflow: auto" scroll-glue" style="width:80%">
+
+    <center> <h4  >{{depute.namedepute}}</h4 ></center>
+    <strong>  <h5 ><center> {{depute.descriptiondepute}}</h5></strong></center>
+    {{depute.date | date :'dd/MM/yyyy hh:mm'}}
+</div>
+
+
+
+
+
+
+  </div>
+
+</div>
+
+</div ></div>

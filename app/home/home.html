@@ -1,0 +1,10 @@
+
+<div ng-controller="NavigationController">
+<div ng-show="!loggedIn">
+   <input type="text" ng-model="login.email">
+   <input type="password "ng-model="login.password">
+   <button ng-click="logUserIn()">login </button>
+   <a ui-sref="signUp">create an account</a>
+
+</div>
+<div ng-show="loggedIn">

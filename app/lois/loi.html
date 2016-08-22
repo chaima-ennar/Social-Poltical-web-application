@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="css/main.css"/>
+<div ng-show="loggedIn">
+
+  <div>
+  <input
+
+   class="w3-animate-input"
+   ng-model="query" placeholder="recherche..."></div>
+
+  </input>
+
+  <div ng-show="adminloggedIn">
+
+<input  id="e"  ng-model="newloi"
+
+          placeholder =" ajouter une loi">
+
+
+</input>
+
+<input  id="f"  ng-model="newLoidescription"
+
+          placeholder =" ajouter une loi">
+
+
+</input>
+  <button ng-click="sendLoi()">submit</button>
+<button ng-click="clear()">clear</button></div>
+
+<div class="left"   > <a ui-sref ="addCommentl">Exprimez-vous</a></div>
+  <center>
+
+
+<div>
+    <div   ng-repeat="loi in lois | filter :query"  class="page">
+      <div class="w3-container w3-section   w3-border" overflow: auto" scroll-glue" style="width:70%">
+        <div ng-show="adminloggedIn"> <td><button class="btn btn-danger" ng-click="remove(loi._id)">Remove</button></td>
+       <td><button class="btn btn-warning"  ng-click="edit(loi._id,loi)"> Edit </button></td>
+   <td><button class="btn btn-info"  ng-click="save(loi._id,loi)"> save changes </button></td></div>
+   <div class="w3-container w3-teal    " overflow: auto" scroll-glue" style="width:80%">
+
+
+      <tr > <center> <h4  >{{loi.nameloi}}</h4 ></center>
+    <strong>  <h5 ><center> {{loi.descriptionloi}}</h5></strong>
+      {{loi.date | date :'dd/MM/yyyy hh:mm'}}
+</div>
+</div>
+
+
+
+
+
+  </div>
+
+</div>
+
+  <div ng-show="loggedIn">
